@@ -1,0 +1,15 @@
+name: finnews-sentiment2signal
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.9
+  - numpy
+  - pandas
+  - matplotlib
+  - scikit-learn
+  - pip
+  - pip:
+    - yfinance
+    - transformers
+    - torch
+    - tqdm
