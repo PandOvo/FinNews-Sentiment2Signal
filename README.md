@@ -45,7 +45,7 @@ ai-fin-nlp-sentiment-predict/
 
 ## 数据来源
 - 演示使用**合成新闻数据**与**合成市场数据**（`data/raw/*_sample.csv`）。
-- 实战可替换为：公开新闻摘要/公告 + yfinance 等市场数据（注意合规与版权，避免泄露）。
+- 实战可替换为：公开新闻摘要/公告 + yfinance 等市场数据。
 
 ## 方法与评估
 - **情感打分**：默认词典法（可拓展 Transformers/LLM）。
@@ -59,13 +59,11 @@ ai-fin-nlp-sentiment-predict/
 - `output/tables/metrics.csv`：相关/IC 指标
 - `output/tables/backtest_perf.csv`：回测绩效摘要
 
-> 注：示例数据仅用于演示，实际有效性需以真实数据与更严谨对齐/去噪为准。
-
 ## 局限性
 - 新闻覆盖与发布时间戳可能与交易时段错配；
 - 中文金融语义复杂，词典法偏弱；
 - 小样本/短样本导致稳定性有限；
-- 非投资建议，仅作技术演示。
+- 非投资建议，仅作演示。
 
 ## 未来改进
 - 使用开源金融情感模型（如 FinBERT/中文 RoBERTa）或指令微调 LLM；
