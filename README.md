@@ -51,9 +51,11 @@ ai-fin-nlp-sentiment-predict/
 
 ## 主要结果（示例）
 运行后将生成：
-- `output/figures/sentiment_vs_market.png`：情感指数与价格对比图<img width="1500" height="900" alt="equity_curves" src="https://github.com/user-attachments/assets/059b4750-a739-4c67-b05c-2751bc5cd3cf" />
+- `output/figures/sentiment_vs_market.png`：情感指数与价格对比图<img width="1500" height="900" alt="sentiment_vs_market" src="https://github.com/user-attachments/assets/09d7ca19-ae73-4f4a-98b8-8ce81688e3bc" />
 
-- `output/figures/equity_curves.png`：择时策略 vs Buy&Hold 的资金曲线<img width="1500" height="900" alt="sentiment_vs_market" src="https://github.com/user-attachments/assets/b573c701-95c9-42fb-89c4-bf128067a1c2" />
+
+- `output/figures/equity_curves.png`：择时策略 vs Buy&Hold 的资金曲线<img width="1500" height="900" alt="equity_curves" src="https://github.com/user-attachments/assets/22b4e88b-22a6-482f-9d8a-09144269f594" />
+
 
 - `output/tables/metrics.csv`：相关/IC 指标
 - `output/tables/backtest_perf.csv`：回测绩效摘要
