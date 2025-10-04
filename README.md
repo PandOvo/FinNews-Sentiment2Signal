@@ -16,16 +16,13 @@ ai-fin-nlp-sentiment-predict/
 │  ├─ raw/ (示例数据：news_sample.csv, market_sample.csv)
 │  ├─ interim/
 │  └─ processed/
-├─ notebooks/  (留空/自建)
 ├─ output/
 │  ├─ figures/ (示例图自动生成)
 │  └─ tables/  (评估表自动生成)
-├─ scripts/
-│  └─ run_full_pipeline.py
-├─ src/
-│  ├─ *.py (模块化源码)
+├─ run_full_pipeline.py
+├─ *.py (模块化源码)
 └─ README.md
-```
+
 
 ## 快速开始
 1. **创建环境**（任选其一）：
@@ -39,13 +36,13 @@ ai-fin-nlp-sentiment-predict/
    ```
 2. **运行一键脚本**
    ```bash
-   python scripts/run_full_pipeline.py
+   python run_full_pipeline.py
    ```
    输出图表与表格见 `output/figures/` 与 `output/tables/`。
 
 ## 数据来源
 - 演示使用**合成新闻数据**与**合成市场数据**（`data/raw/*_sample.csv`）。
-- 实战可替换为：公开新闻摘要/公告 + yfinance 等市场数据（注意合规与版权，避免泄露）。
+- 可替换为：公开新闻摘要/公告 + yfinance 等市场数据。
 
 ## 方法与评估
 - **情感打分**：默认词典法（可拓展 Transformers/LLM）。
@@ -54,18 +51,17 @@ ai-fin-nlp-sentiment-predict/
 
 ## 主要结果（示例）
 运行后将生成：
-- `output/figures/sentiment_vs_market.png`：情感指数与价格对比图
-- `output/figures/equity_curves.png`：择时策略 vs Buy&Hold 的资金曲线
+- `output/figures/sentiment_vs_market.png`：情感指数与价格对比图<img width="1500" height="900" alt="equity_curves" src="https://github.com/user-attachments/assets/059b4750-a739-4c67-b05c-2751bc5cd3cf" />
+
+- `output/figures/equity_curves.png`：择时策略 vs Buy&Hold 的资金曲线<img width="1500" height="900" alt="sentiment_vs_market" src="https://github.com/user-attachments/assets/b573c701-95c9-42fb-89c4-bf128067a1c2" />
+
 - `output/tables/metrics.csv`：相关/IC 指标
 - `output/tables/backtest_perf.csv`：回测绩效摘要
-
-> 注：示例数据仅用于演示，实际有效性需以真实数据与更严谨对齐/去噪为准。
 
 ## 局限性
 - 新闻覆盖与发布时间戳可能与交易时段错配；
 - 中文金融语义复杂，词典法偏弱；
 - 小样本/短样本导致稳定性有限；
-- 非投资建议，仅作技术演示。
 
 ## 未来改进
 - 使用开源金融情感模型（如 FinBERT/中文 RoBERTa）或指令微调 LLM；
