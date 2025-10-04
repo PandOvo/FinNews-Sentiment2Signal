@@ -3,7 +3,7 @@ import numpy as np
 from config import LAG_DAYS
 
 def aggregate_daily_sentiment(df_news_scored: pd.DataFrame) -> pd.DataFrame:
-    # df_news_scored: date, score
+
     grp = df_news_scored.groupby('date').agg(
         sent_score_mean=('score', 'mean'),
         sent_pos_ratio=('score', lambda s: (s > 0).mean() if len(s)>0 else 0.0),

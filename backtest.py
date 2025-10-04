@@ -5,7 +5,7 @@ def threshold_timing(df: pd.DataFrame, signal_col: str, upper_q=0.7, lower_q=0.3
     df = df.dropna(subset=[signal_col, 'ret_1d']).copy()
     up = df[signal_col].quantile(upper_q)
     low = df[signal_col].quantile(lower_q)
-    # position: 1 if signal>up; 0 if signal<low; carry otherwise
+
     pos = []
     last = 0
     for v in df[signal_col].values:
@@ -15,11 +15,8 @@ def threshold_timing(df: pd.DataFrame, signal_col: str, upper_q=0.7, lower_q=0.3
             last = 0
         pos.append(last)
     df['pos'] = pos
-    # trades
     df['trade'] = df['pos'].diff().fillna(0).abs()
-    # strategy gross return
     df['strat_ret_gross'] = df['pos'] * df['ret_1d']
-    # cost per trade
     cost = cost_bps / 10000.0
     df['strat_ret_net'] = df['strat_ret_gross'] - df['trade'] * cost
     perf = {

@@ -15,5 +15,4 @@ def corr_and_ic(df):
     sentiment_vs_market_corr = df['sent_net'].corr(df['close'])
     print(f"Correlation between Sentiment and Market: {sentiment_vs_market_corr:.2f}")
 
-    # 返回相关性值
     return {'sentiment_vs_market_corr': sentiment_vs_market_corr}
